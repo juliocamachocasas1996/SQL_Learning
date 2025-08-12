@@ -23,3 +23,28 @@ where grade =(
   where id=20
 )
 ;
+
+-- Write a query that gives the first and last names of students enrolled in band but not in drama.
+SELECT first_name, last_name
+FROM band_students
+WHERE id NOT IN (
+   SELECT id
+   FROM drama_students);
+
+--If we compare this functionality in terms of efficiency, EXISTS/NOT EXISTS are usually more efficient than IN/NOT IN clauses; this is because the IN/NOT IN clause has to return all rows meeting the specific criteria whereas the EXISTS/NOT EXISTS
+-- only needs to find the presence of one row to determine if a true or false value needs to be returned.
+--In the previous exercise, we used an example query that pulled students who are enrolled in both statistics and history using IN — the following query pulls the same information using EXISTS instead:
+SELECT * 
+FROM statistics_students
+WHERE EXISTS (
+  SELECT * 
+  FROM history_students
+  WHERE id = statistics_students.id
+);
+
+---Write a query that produces the first and last names of all the students who are enrolled in both band AND drama.
+select first_name,last_name from band_students 
+where exists (
+  select first_name,last_name from drama_students
+  where id=band_students.id
+);
