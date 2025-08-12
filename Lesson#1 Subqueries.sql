@@ -14,3 +14,12 @@ where id in (
 );
 
 
+--Emlynne Torritti (id 20), has decided to drop band and join drama. She wants to know all of the other students in her grade level who are already enrolled in drama.
+--Use the tables drama_students and band_students to create a subquery that finds the students enrolled in drama that are in the same grade as Emlynne.
+SELECT * FROM drama_students 
+where grade =(
+  select grade
+  from band_students
+  where id=20
+)
+;
