@@ -74,5 +74,5 @@ SELECT
   AND DATEFROMPARTS(LOADS.Year, LOADS.Month, 1)='2025-07-01'
 	GROUP BY PC.BranchCode,DATEFROMPARTS(LOADS.Year, LOADS.Month, 1)
  --,DATEFROMPARTS(LOADS.Year, LOADS.Month, 1) 
-  ORDER BY [Transaction Date] DESC
+  ORDER BY [Transaction Date] ASC
 --  ;
