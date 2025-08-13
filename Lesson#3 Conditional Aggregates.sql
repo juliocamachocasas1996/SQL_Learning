@@ -1,0 +1,5 @@
+-- Skills you'll gain
+-- Work effectively with NULL as a SQL field value
+-- Use CASE to initiate conditional statements
+-- Use aggregate functions like COUNT and SUM
+-- Combine conditionals and aggregates to return useful measures of table data
