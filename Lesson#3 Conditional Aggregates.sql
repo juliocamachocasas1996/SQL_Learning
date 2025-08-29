@@ -43,7 +43,6 @@ GROUP BY 1
 ;
 -- COUNT(CASE WHEN )
 -- Sometimes you want to look at an entire result set, but want to implement conditions on certain aggregates.
-
 -- For instance, maybe you want to identify the total amount of airports as well as the total amount of airports 
 -- with high elevation in the same result set. We can accomplish this by putting a CASE WHEN statement in the aggregate.
 SELECT	state, 
